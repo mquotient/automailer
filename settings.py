@@ -5,7 +5,8 @@ maximum_dat_files = 200 # Maimum number of dat files
 sgsn_path = "/home/linus/cgw/SGSN"
 root_dir = "/home"
 normal_mailing_list = [
-                       "abhijeet@mquotient.net"
+                       "abhijeet@mquotient.net",
+                       "sreejith@mquotient.net"
                        ]
 error_mailing_list = [
                       "abhijeet@mquotient.net",

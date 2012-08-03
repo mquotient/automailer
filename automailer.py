@@ -140,5 +140,6 @@ if __name__ == "__main__":
         for recepient in error_mailing_list:
             sendmail(recepient, e.message, subject="CG Error")
     else:
+        print "Everything is normal"
         for recepient in normal_mailing_list:
             sendmail(recepient, "", subject="CG Running Normally")
