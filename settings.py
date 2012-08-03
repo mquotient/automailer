@@ -12,3 +12,5 @@ error_mailing_list = [
                       "abhijeet@mquotient.net",
                       "sreejith@mquotient.net"
                       ]
+
+mail_foot_note = "This mail is sent by the automailer script"

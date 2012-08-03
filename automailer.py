@@ -54,7 +54,7 @@ def sendmail(to_address,
     msg['Subject'] = subject
     try:
         s = smtplib.SMTP(host)
-        s.sendmail(from_address, to_address, msg.as_string())
+        s.sendmail(from_address, to_address, msg.as_string() + "\n\n---" + mail_foot_note)
         s.quit()
     except Exception as e:
         print e
