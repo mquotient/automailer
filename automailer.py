@@ -138,8 +138,10 @@ if __name__ == "__main__":
         check_space(root_dir)
     except (GTPPNotRunningError, AppNotRunningError, FileCollectionError, OutOfSpace, PCPNotRunningError) as e:
         for recepient in error_mailing_list:
+            print "Mailing {}".format(recepient)
             sendmail(recepient, e.message, subject="CG Error")
     else:
         print "Everything is normal"
         for recepient in normal_mailing_list:
+            print "Mailing {}".format(recepient)
             sendmail(recepient, "", subject="CG Running Normally")
