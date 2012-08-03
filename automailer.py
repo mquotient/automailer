@@ -14,24 +14,24 @@ class GTPPNotRunningError(Exception):
         
 class AppNotRunningError(Exception):
     
-    def __init__(self, msg):
+    def __init__(self, msg=""):
         self.message = "Application stopped running in the system. " + msg
 
 
 class PCPNotRunningError(Exception):
     
-    def __init__(self, msg):
+    def __init__(self, msg=""):
         self.message = "Partial CDR processing is not working properly. " + msg
         
         
 class FileCollectionError(Exception):
     
-    def __init__(self, msg):
+    def __init__(self, msg=""):
         self.message = "Files are not getting collected. " + msg
 
 
 class OutOfSpace(Exception):
-    def __init__(self, msg):
+    def __init__(self, msg=""):
         self.message = "File system is running out of space. " + msg
 
 
@@ -65,7 +65,7 @@ def check_gtpp_running():
         raise GTPPNotRunningError()
 
 
-def GTP_running():
+def check_app_running():
     if not process_running("GTPInit2"):
         raise AppNotRunningError()
 
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     try:
         # First check if the processes are running
         check_gtpp_running()
-        GTP_running()
+        check_app_running()
         
         # Now check if the files are gettign generated properly
         check_collection(sgsn_path)
